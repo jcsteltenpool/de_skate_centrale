@@ -9,12 +9,13 @@ html {
 h1 {
     font-weight: bold;
     font-size: 5rem;
-    color: #FFEC4B;
+    color: rgb(255, 230, 0);
     margin-bottom: 0;
 }
 
 h2 {
     font-size: 2.5rem;
+    color:#ffffff;
     font-style: italic;
     margin: 1rem 0;
 }
@@ -39,14 +40,21 @@ p {
     font-weight: 300;
 }
 
-.main-content,
+main,
 footer {
     position: relative;
     top: 6.3125rem; 
 }
 
+.anchor {
+    display: block;
+    position: relative;
+    top: -6.3125rem;
+    visibility: hidden;
+}
+
 @media only screen and (max-width: 600px) {
-    .main-content,
+    main,
     footer {
         top: 4.3125rem; 
     }
@@ -56,7 +64,7 @@ footer {
 nav {
     position: fixed;
     width: 100%;
-    background-color: #4a4a4a;
+    background-color: rgb(74, 74, 74);
     top: 0px;
     left: 0px;
     z-index: 10;
@@ -71,7 +79,7 @@ nav .content {
 nav .logo {
     width: 5rem;
     border-radius: 50%;
-    border: 1px solid rgb(255, 236, 75);
+    border: 1px solid rgb(255, 230, 0);
     margin: 0.5rem;
     margin-left: 1rem;
 }
@@ -95,7 +103,7 @@ nav .icon {
 }
 
 .menu a:hover {
-    color: #FFEC4B;
+    color: rgb(255, 230, 0);
 }
 
 @media only screen and (max-width: 600px) {
@@ -117,18 +125,18 @@ nav .icon {
 .banner {
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
-    background-image: url("./resources/skatecentrale_background_image.jpeg");
+    align-items: center;
+    background-image: linear-gradient(rgba(74, 74, 74, 0.4), rgba(74, 74, 74, 0.4)), 
+                    url("./resources/skatecentrale_background_image.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 40%;
+    background-position: center top;
     background-attachment: fixed;
-    height: 600px;
+    height: 550px;
 }
 
 .banner .header {
     position: relative;
-    top: 50%;
     left: 10%;
     margin-right: 10rem;
 }
@@ -146,7 +154,9 @@ nav .icon {
     .banner {
         height: 300px;
         align-items: center;
-        background-position: center;
+        background-image: linear-gradient(rgba(74, 74, 74, 0.4), rgba(74, 74, 74, 0.4)),
+                        url("./resources/skatecentrale_background_image_small.jpeg");
+        background-position-x: 60%;
     }
 
     .banner .header {
@@ -154,13 +164,6 @@ nav .icon {
         margin: 1.2rem;
     }
 }
-
-@media only screen and (max-width: 1024px) {
-    .banner .header {
-        top: 30%;
-    }
-}
-
 
 /* Skateboardles & Visie */
 
@@ -176,19 +179,19 @@ nav .icon {
     background-color: #d3d3d3;
 }
 
-.les .image-container,
-.visie .image-container {
+#les .image-container,
+#visie .image-container {
     width: 70%;
     flex: 4 2 700px;
 }
 
 .image-container img {
-    max-width: 100%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.les .button {
+#les .button {
     border-radius: 4px;
     background-color: #4a4a4a;
     color: white;
@@ -198,8 +201,12 @@ nav .icon {
     cursor: pointer;
 }
 
-.button:hover {
+#les .button:hover {
     background-color: #686868;
+}
+
+#les .button:active {
+    transform: scale(0.97);
 }
 
 @media only screen and (max-width: 600px) {
@@ -211,23 +218,30 @@ nav .icon {
         flex: none;
     }
 
-    .les .image-container,
-    .visie .image-container {
-        width: 100%;
+    #les .image-container,
+    #visie .image-container {
+        width: 100vw;
+        height: 100vh;
         flex: none;
+    }
+
+    .button-container {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
     }
 
 }
 /* Team */
 
-.team {
+.team_container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.team .image-container {
+.team_container .image-container {
     width: 300px;
     height: auto;
 }
@@ -246,11 +260,11 @@ nav .icon {
 }
 
 @media only screen and (max-width: 600px) {
-    .team .image-container {
+    .team_container .image-container {
         height: 200px;
     }
 
-    .team .image-container img {
+    .team_container .image-container img {
         width: 100%;
         height: 100%;
         object-fit: cover;
