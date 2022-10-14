@@ -4,37 +4,57 @@
   <head>
     <title>De Skate Centrale</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./resources/favicon 2.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <style> :root { --kleurGeel: #ffe600} </style>
+    <style> :root { --kleurWit: #f5f5f5} </style>
+    <style> :root { --kleurLichtgrijs: #d3d3d3} </style>
+    <style> :root { --kleurDonkergrijs: #4a4a4a} </style>
   </head>
 
   <body>
     <!-- Navigation -->
-    <nav>
+    <header>
       <div class="content">
         <a href="#top">
           <img src="./resources/skatecentrale_logo.png" class ="logo" alt="Skate Centrale logo">
         </a>
-        <div class="menu">
-          <a href="#les">Skateboardles</a>
-          <a href="#visie">Onze visie</a>
-          <a href="#team">Ons team</a>
-          <a href="https://www.instagram.com/de_skate_centrale/" target="_blank">Volg ons<img class="icon" src="./resources/instagram_white.png"></a>
+        <nav class="desktop-menu">
+          <ul>
+            <li><a href="#les">Skateboardles</a></li>
+            <li><a href="#visie">Onze visie</a></li>
+            <li><a href="#team">Ons team</a></li>
+            <li><a href="https://www.instagram.com/de_skate_centrale/" target="_blank">Volg ons<img class="icon" src="./resources/instagram_white.png"></a></li>
+          </ul>
+        </nav>
+        <div class="mobile-menu-button">
+          <a><img src="./resources/menu-open.png" class="menu-button menu-button-open js-show-menu"></a>
+          <a><img src="./resources/menu-close.png" class="menu-button menu-button-close js-hide-menu" hidden="true"></a>
+        </div> 
+        <div class="mobile-menu">
+          <nav>
+            <ul>
+              <li><a href="#les" class="js-hide-menu">Skateboardles</a></li>
+              <li><a href="#visie" class="js-hide-menu">Onze visie</a></li>
+              <li><a href="#team" class="js-hide-menu">Ons team</a></li>
+              <li><a href="https://www.instagram.com/de_skate_centrale/" target="_blank" class="js-hide-menu"><img class="icon" src="./resources/instagram_white.png"></a></li>
+            </ul>
+          </nav>
         </div>
       </div>
-    </nav>
+    </header>
 
     <main>
 
       <!-- Banner -->
-      <section class="banner">
-        <div class="header">          
+      <section class="banner-container">
+        <div class="banner">          
           <h1>De Skate Centrale</h1>
           <h2>Het indoor skatepark van Midden-Nederland</h2>
         </div>
@@ -63,7 +83,7 @@
       <a class="anchor" id="visie"></a>
       <section id="visie">
         <h3>Onze visie</h3>
-        <div class="content">
+        <div class="content visie">
           <div class="image-container">
             <img src="./resources/skatecentrale_visie.jpeg" />
           </div>
@@ -125,6 +145,6 @@
         <span class="copyright">Joost Steltenpool (2022)</span>
       </div>
     </footer>
-
+    <script src="script.js"></script>
   </body>
 </html>

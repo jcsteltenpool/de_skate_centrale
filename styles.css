@@ -1,15 +1,29 @@
-body,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
-    font-family: 'Roboto Condensed', sans-serif;
     font-size: 16px;
-    margin: 0 auto;
+    font-family: 'Roboto Condensed', sans-serif;
     scroll-behavior: smooth;
+}
+
+body {
+    min-width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+ol, ul {
+    list-style: none;
 }
 
 h1 {
     font-weight: bold;
     font-size: 5rem;
-    color: rgb(255, 230, 0);
+    color: var(--kleurGeel);
     margin-bottom: 0;
 }
 
@@ -33,6 +47,7 @@ h4 {
 
 p {
     line-height: 1.75rem;
+    margin: 1rem 0;
 }
 
 .cursive {
@@ -58,71 +73,132 @@ footer {
     footer {
         top: 4.3125rem; 
     }
+
+    .anchor {
+        top: -4.3125rem;
+    }
 }
 
-/* Navigation */
-nav {
+/* Header */
+
+header {
     position: fixed;
     width: 100%;
-    background-color: rgb(74, 74, 74);
+    background-color: #4a4a4a;
+    border-bottom: solid 1px var(--kleurGeel);
     top: 0px;
     left: 0px;
-    z-index: 10;
+    z-index: 1000;
 }
 
-nav .content {
+header .content {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav .logo {
+header .logo {
     width: 5rem;
     border-radius: 50%;
-    border: 1px solid rgb(255, 230, 0);
+    border: 1px solid var(--kleurGeel);
     margin: 0.5rem;
     margin-left: 1rem;
 }
 
-nav .icon {
+header .icon {
     width: 2.5rem;
     position: relative;
     top: 0.25rem;
 }
 
-.menu {
+header nav ul {
     display: flex;
     align-items: baseline;
     padding-right: 1rem;
 }
 
-.menu a {
+nav li a {
     padding-left: 3.5rem;
     text-decoration: none;
-    color: whitesmoke;
+    color: var(--kleurWit);
 }
 
-.menu a:hover {
-    color: rgb(255, 230, 0);
+nav li a:hover {
+    color: var(--kleurGeel);
+}
+
+header .mobile-menu,
+header .mobile-menu-button{
+    display: none;
+}
+
+header .mobile-menu {
+    position: absolute;
+    top: 4rem;
+    width: 100%;
+    background-color: var(--kleurDonkergrijs);
+    border-bottom: 1px solid var(--kleurGeel);
+}
+
+.mobile-menu-button {
+    width: 2rem;
+    height: auto;
+    margin-right: 1.5rem;
+}
+
+.mobile-menu nav {
+    padding: 0 1rem 1rem 1rem;
+}
+.menu-button {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 768px) {
+    nav li a {
+        padding-left: 2rem;
+    }
 }
 
 @media only screen and (max-width: 600px) {
-    nav .logo {
+    header .logo {
         width: 3rem;
-        margin-left: 0.5rem;
+        /* margin-left: 0.5rem; */
     }
 
-    nav .content {
-        flex-direction: column;
-    }
-    .menu {
+    header .desktop-menu {
         display: none;
+    }
+
+    header .mobile-menu-button {
+        display: block;
+    }
+
+    header .content {
+        flex-flow: row;
+    }
+    
+    header nav ul {
+        flex-direction: column;
+        padding-right: 0;
+        align-items: center;
+    }
+
+    header .icon {
+        width: 3rem;
+    }
+
+    nav li a {
+        padding-left: 0;
+        font-size: 1.5rem;
+        line-height: 4rem;
     }
 }
 
 /* Banner */
 
-.banner {
+.banner-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -135,7 +211,7 @@ nav .icon {
     height: 550px;
 }
 
-.banner .header {
+.banner {
     position: relative;
     left: 10%;
     margin-right: 10rem;
@@ -151,15 +227,14 @@ nav .icon {
         color: #ffffff;
     }
 
-    .banner {
+    .banner-container {
         height: 300px;
         align-items: center;
         background-image: linear-gradient(rgba(74, 74, 74, 0.4), rgba(74, 74, 74, 0.4)),
                         url("./resources/skatecentrale_background_image_small.jpeg");
-        background-position-x: 60%;
     }
 
-    .banner .header {
+    .banner {
         position: static;
         margin: 1.2rem;
     }
@@ -176,7 +251,7 @@ nav .icon {
     padding: 0.5rem 1.5rem 1.5rem 1.5rem;
     min-width: 30%;
     flex: 1 1 300px;
-    background-color: #d3d3d3;
+    background-color: var(--kleurLichtgrijs);
 }
 
 #les .image-container,
@@ -193,11 +268,11 @@ nav .icon {
 
 #les .button {
     border-radius: 4px;
-    background-color: #4a4a4a;
+    background-color: var(--kleurDonkergrijs);
     color: white;
     padding: 0.75rem;
     text-align: center;
-    width: 5rem;
+    width: 8rem;
     cursor: pointer;
 }
 
@@ -210,8 +285,11 @@ nav .icon {
 }
 
 @media only screen and (max-width: 600px) {
-    .content {
+    #les .content {
         flex-flow: column-reverse;
+    }
+    #visie .content {
+        flex-flow: column;
     }
 
     .text {
@@ -251,7 +329,7 @@ nav .icon {
     flex-direction: column;
     align-items: center;
     margin: 0 1rem 2rem 1rem;
-    border: 1px solid #FFEC4B;
+    border: 1px solid var(--kleurGeel);
 }
 
 .teamlid p {
@@ -287,13 +365,13 @@ nav .icon {
 
 #contact {
     text-align: center;
-    background-color: #d3d3d3;
+    background-color: var(--kleurLichtgrijs);
     padding: 1.5rem;
 }
 footer .content {
     justify-content: space-between;
     color: #ffffff;
-    background-color: #4a4a4a;
+    background-color: var(--kleurDonkergrijs);
     font-weight: 300;
     padding: 1rem;
     box-sizing: border-box;
