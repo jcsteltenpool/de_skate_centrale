@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+:root { 
+    --kleurGeel: #ffe600;
+    --kleurWit: #f5f5f5;
+    --kleurLichtgrijs: #d3d3d3;
+    --kleurDonkergrijs: #4a4a4a;
+} 
+
 html {
     font-size: 16px;
     font-family: 'Roboto Condensed', sans-serif;
@@ -208,6 +215,7 @@ header .mobile-menu {
     background-repeat: no-repeat;
     background-position: center top;
     background-attachment: fixed;
+    width: 100%;
     height: 550px;
 }
 
