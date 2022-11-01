@@ -308,7 +308,7 @@ header .mobile-menu {
     #les .image-container,
     #visie .image-container {
         width: 100vw;
-        height: 100vh;
+        /* height: 100vh; */
         flex: none;
     }
 
