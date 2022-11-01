@@ -240,6 +240,7 @@ header .mobile-menu {
         align-items: center;
         background-image: linear-gradient(rgba(74, 74, 74, 0.4), rgba(74, 74, 74, 0.4)),
                         url("./resources/skatecentrale_background_image_small.jpeg");
+        background-attachment: scroll;
     }
 
     .banner {
