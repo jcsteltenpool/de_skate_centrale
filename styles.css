@@ -228,7 +228,7 @@ header .mobile-menu {
     margin-right: 10rem;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (hover: none) {
     .banner-container {
         background-attachment: scroll;
     }
@@ -315,7 +315,7 @@ header .mobile-menu {
     #les .image-container,
     #visie .image-container {
         width: 100vw;
-        height: 100vh;
+        /* height: 100vh; */
         flex: 0 0 0;
     }
 
